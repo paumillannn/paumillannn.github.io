@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pau Millan Viarnès — Desenvolupador Web, Ciberseguretat & CEO de Nuvia Dev.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Pau Millan Viarnès">
+<meta property="og:description" content="Desarrollador Web · Ciberseguridad · CEO Nuvia Dev">
+<meta property="og:type" content="website">
+<title>Pau Millan Viarnès</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+<!-- PROGRESS -->
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <button class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">PMV</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sobre" data-i18n="nav_about">Sobre mi</a></li>
+      <li><a href="#experiencia" data-i18n="nav_exp">Experiència</a></li>
+      <li><a href="#certificats" data-i18n="nav_certs">Certificats</a></li>
+      <li><a href="#projectes" data-i18n="nav_proj">Projectes</a></li>
+      <li><a href="#habilitats" data-i18n="nav_skills">Habilitats</a></li>
+      <li><a href="#contacte" data-i18n="nav_contact">Contacte</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang-switch">
+        <button class="lang-btn" id="lb-ca" onclick="setLang('ca')">CA</button>
+        <span class="lang-div"></span>
+        <button class="lang-btn" id="lb-es" onclick="setLang('es')">ES</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mobile-nav">
+  <div class="mnav-links">
+    <a href="#sobre" data-i18n="nav_about" onclick="closeMobile()"><span>01</span>Sobre mi</a>
+    <a href="#experiencia" data-i18n="nav_exp" onclick="closeMobile()"><span>02</span>Experiència</a>
+    <a href="#certificats" data-i18n="nav_certs" onclick="closeMobile()"><span>03</span>Certificats</a>
+    <a href="#projectes" data-i18n="nav_proj" onclick="closeMobile()"><span>04</span>Projectes</a>
+    <a href="#habilitats" data-i18n="nav_skills" onclick="closeMobile()"><span>05</span>Habilitats</a>
+    <a href="#contacte" data-i18n="nav_contact" onclick="closeMobile()"><span>06</span>Contacte</a>
+  </div>
+  <div class="mnav-foot">pau.millan.viarnes@gmail.com</div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-line h-line-1"></div>
+    <div class="hero-line h-line-2"></div>
+    <div class="hero-grain"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-meta">
+        <div class="avail-badge">
+          <span class="avail-dot"></span>
+          <span data-i18n="status">Disponible per a nous projectes</span>
+        </div>
+        <div class="hero-loc">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Igualada, Catalunya
+        </div>
+      </div>
+      <div class="hero-title-block">
+        <h1 class="hero-name">
+          <span class="name-line" data-text="PAU">PAU</span>
+          <span class="name-line name-italic" data-text="MILLAN">MILLAN</span>
+          <span class="name-line name-outline" data-text="VIARNÈS">VIARNÈS</span>
+        </h1>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-role-wrap">
+          <div class="hero-role-label" data-i18n="role_label">Rol actual</div>
+          <div class="hero-role"><span id="typed"></span><span class="tcursor">|</span></div>
+        </div>
+        <p class="hero-desc" data-i18n="hero_desc">Estudiant de DAM, CEO de <em>Nuvia Dev</em> i apassionat de la ciberseguretat. Des d'Igualada, construeixo solucions digitals amb intenció.</p>
+        <div class="hero-actions">
+          <a href="#contacte" class="btn-primary" data-i18n="cta1">Contacta'm</a>
+          <a href="#projectes" class="btn-ghost" data-i18n="cta2">Veure projectes</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-lbl" data-i18n="hn1">Anys en tech</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-lbl" data-i18n="hn2">Projectes</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-lbl" data-i18n="hn3">Certificats</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <div class="scroll-line-anim"></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">01</div>
+      <h2 class="section-title" data-i18n="about_title">Sobre <em>mi</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-i18n="about_p1">Soc en Pau, un desenvolupador apassionat per la tecnologia i la ciberseguretat. Cursant el Cicle Formatiu de Grau Superior en Desenvolupament d'Aplicacions Multiplataforma (DAM) a l'Institut Milà i Fontanals d'Igualada.</p>
+        <p data-i18n="about_p2">El meu recorregut inclou formació en Sistemes Microinformàtics i Xarxes (SMX), una base sòlida en infraestructura i xarxes. Com a CEO i fundador de <strong>Nuvia Dev</strong>, porto experiència en gestió de projectes i construcció de solucions digitals.</p>
+        <p data-i18n="about_p3">Compagino el codi amb la vida real com a cambrer al restaurant <strong><a href="https://www.instagram.com/lokal_coffee_gastrobar/?hl=es" target="_blank" rel="noopener">LOKAL</a></strong> d'Igualada. La dualitat entre el món tècnic i l'atenció al públic em fa un perfil diferent: comunico, m'adapto i resolc.</p>
+      </div>
+      <div class="about-cards reveal">
+        <div class="acard">
+          <div class="acard-num">5+</div>
+          <div class="acard-lbl" data-i18n="b1">Anys en tecnologia</div>
+        </div>
+        <div class="acard">
+          <div class="acard-num">10+</div>
+          <div class="acard-lbl" data-i18n="b2">Projectes completats</div>
+        </div>
+        <div class="acard acard-wide">
+          <div class="acard-tag">DAM</div>
+          <div class="acard-lbl" data-i18n="b3">Cicle Superior · Institut Milà i Fontanals · Igualada</div>
+        </div>
+        <div class="acard acard-wide acard-highlight">
+          <div class="acard-icon">◆</div>
+          <div>
+            <div class="acard-sub" data-i18n="b5">Actitud</div>
+            <div class="acard-lbl" data-i18n="b5v">Aprenentatge continu · Adaptabilitat · Ganes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÈNCIA -->
+<section id="experiencia" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">02</div>
+      <h2 class="section-title" data-i18n="exp_title">Experièn<em>cia</em></h2>
+    </div>
+    <div class="timeline">
+
+      
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year" data-i18n="lokal_p">Actual</span>
+          <span class="tl-status tl-now" data-i18n="now">Ara</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot tl-dot-now"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="lokal_t">Cambrer — Restaurant LOKAL</h3>
+          <div class="tl-org">LOKAL Restaurant · Igualada</div>
+          <p class="tl-desc" data-i18n="lokal_d">Cambrer i atenció al client al restaurant LOKAL d'Igualada. Gestió de comandes, atenció personalitzada i treball en equip en un entorn dinàmic i exigent.</p>
+          <div class="tl-tags">
+            <span data-i18n="t_atc">Atenció al client</span>
+            <span data-i18n="t_team">Treball en equip</span>
+            <span>Hostaleria</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year">2025 — <span data-i18n="present">Actualitat</span></span>
+          <span class="tl-status tl-now" data-i18n="now">Ara</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot tl-dot-now"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="nuvia_t">CEO & Fundador — Nuvia Dev</h3>
+          <div class="tl-org"><a href="https://nuviadev.github.io/index.html" target="_blank" rel="noopener">Nuvia Dev</a></div>
+          <p class="tl-desc" data-i18n="nuvia_d">Fundació i gestió d'empresa de desenvolupament de webs. Gestió de projectes, relació amb clients, arquitectura de solucions digitals a mida i direcció tècnica de l'empresa.</p>
+          <div class="tl-tags">
+            <span data-i18n="t_ent">Emprenedoria</span>
+            <span data-i18n="t_mgmt">Gestió</span>
+            <span data-i18n="t_dev">Desenvolupament</span>
+            <span data-i18n="t_cli">Clients</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year">2025 — <span data-i18n="present">Actualitat</span></span>
+          <span class="tl-status tl-now" data-i18n="now">Ara</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot tl-dot-now"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="dam_t">Cicle Formatiu Superior — DAM</h3>
+          <div class="tl-org">Institut Milà i Fontanals · Igualada</div>
+          <p class="tl-desc" data-i18n="dam_d">Desenvolupament d'Aplicacions Multiplataforma. Especialització en programació professional, patrons de disseny, metodologies àgils i arquitectura del software.</p>
+          <div class="tl-tags">
+            <span>DAM</span>
+            <span data-i18n="t_edu">Educació</span>
+            <span data-i18n="t_dev">Desenvolupament</span>
+            <span>Agile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year">2024 — 2026</span>
+          <span class="tl-status" data-i18n="fin">Finalitzat</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="bef_t">Tècnic Web — BEF Energy</h3>
+          <div class="tl-org"><a href="https://www.befenergy.com" target="_blank" rel="noopener">BEF Energy</a></div>
+          <p class="tl-desc" data-i18n="bef_d">Desenvolupament d'aplicacions web, automatització de processos, gestió de xarxes socials i suport tècnic. Optimització d'infraestructura i millora de processos interns.</p>
+          <div class="tl-tags">
+            <span>Web Dev</span>
+            <span data-i18n="t_auto">Automatització</span>
+            <span data-i18n="t_suport">Suport Tècnic</span>
+            <span>Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year">2023 — 2025</span>
+          <span class="tl-status" data-i18n="fin">Finalitzat</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="smx_t">Cicle Formatiu Mitjà — SMX</h3>
+          <div class="tl-org">Institut Milà i Fontanals · Igualada</div>
+          <p class="tl-desc" data-i18n="smx_d">Sistemes Microinformàtics i Xarxes. Base sòlida en infraestructura, administració de xarxes, sistemes operatius i hardware. Formació que complementa perfectament el perfil de desenvolupador.</p>
+          <div class="tl-tags">
+            <span>SMX</span>
+            <span data-i18n="t_xarx">Xarxes</span>
+            <span data-i18n="t_infra">Infraestructura</span>
+            <span>Hardware</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year" data-i18n="prac">Pràctiques</span>
+          <span class="tl-status" data-i18n="fin">Finalitzat</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="sai_t">Tècnic — SAI COMPUTERS</h3>
+          <div class="tl-org"><a href="https://www.saicomputers.net" target="_blank" rel="noopener">SAI COMPUTERS</a></div>
+          <p class="tl-desc" data-i18n="sai_d">Pràctiques professionals a SAI COMPUTERS. Suport tècnic, manteniment de sistemes, resolució d'incidències hardware i software, i assistència en gestió de xarxes empresarials.</p>
+          <div class="tl-tags">
+            <span data-i18n="t_suport">Suport Tècnic</span>
+            <span>Hardware</span>
+            <span data-i18n="t_xarx">Xarxes</span>
+            <span data-i18n="t_mant">Manteniment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year" data-i18n="exp_lab">Exp. Laboral</span>
+          <span class="tl-status">Anterior</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title" data-i18n="ido_t">Bartender — Ido</h3>
+          <div class="tl-org"><a href="https://idoigualada.cat" target="_blank" rel="noopener">Ido · Igualada</a></div>
+          <p class="tl-desc" data-i18n="ido_d">Bartender a Ido, oferint experiències úniques i atenció personalitzada. Gestió de barra, atenció al client i treball en equip en un ambient animat.</p>
+          <div class="tl-tags">
+            <span>Bartender</span>
+            <span data-i18n="t_atc">Atenció al client</span>
+            <span data-i18n="t_team">Treball en equip</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year" data-i18n="exp_lab">Exp. Laboral</span>
+          <span class="tl-status">Anterior</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title">Monitor — Anima'ns</h3>
+          <div class="tl-org"><a href="https://animans.info" target="_blank" rel="noopener">Anima'ns</a></div>
+          <p class="tl-desc" data-i18n="animans_d">Organització d'animacions per a esdeveniments familiars i corporatius. Coordinació de jocs, tallers i inflables per a nens, assegurant que cada celebració fos divertida, segura i memorable.</p>
+          <div class="tl-tags">
+            <span>Monitor</span>
+            <span data-i18n="t_events">Esdeveniments</span>
+            <span data-i18n="t_nens">Nens</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row reveal">
+        <div class="tl-meta">
+          <span class="tl-year">10+ anys</span>
+          <span class="tl-status" data-i18n="now">Actualment</span>
+        </div>
+        <div class="tl-line"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <h3 class="tl-title">Pianista — Escola de Música ECMMI</h3>
+          <div class="tl-org">ECMMI · Igualada</div>
+          <p class="tl-desc">Pianista amb 10 anys d'experiència en l'Escola de Música ECMMI. Especialització en Grau Superior de Música, amb domini avançat del piano i participació en recitals i actuacions musicals.</p>
+          <div class="tl-tags">
+            <span>Piano</span>
+            <span>Música</span>
+            <span>Grau Superior</span>
+            <span>Actuacions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+</section>
+
+<!-- CERTIFICATS -->
+<section id="certificats" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">03</div>
+      <h2 class="section-title" data-i18n="cert_title">Certifi<em>cats</em></h2>
+      <p class="section-sub reveal" data-i18n="cert_sub">Formació professional i certificacions obtingudes al llarg de la meva trajectòria.</p>
+    </div>
+    <div class="certs-grid">
+
+      <div class="cert-card reveal">
+        <div class="cert-num">01</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="cert-name" data-i18n="c1">Ètica Hacking</div>
+        <div class="cert-issuer">Webinars</div>
+        <div class="cert-cta">
+          <span data-i18n="cert_ok">Certificat</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-num">02</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3h14V8M12 11v5"/></svg>
+        </div>
+        <div class="cert-name" data-i18n="c2">Administració de Xarxes</div>
+        <div class="cert-issuer">Webinars</div>
+        <div class="cert-cta">
+          <span data-i18n="cert_ok">Certificat</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-num">03</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <div class="cert-name">PowerShell Scripting</div>
+        <div class="cert-issuer">Webinars</div>
+        <div class="cert-cta">
+          <span data-i18n="cert_ok">Certificat</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-num">04</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name" data-i18n="c4">Hacking Avançat</div>
+        <div class="cert-issuer">Webinars</div>
+        <div class="cert-cta">
+          <span data-i18n="cert_ok">Certificat</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-num">05</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name">CISCO Networking</div>
+        <div class="cert-issuer">CISCO Academy</div>
+        <div class="cert-cta">
+          <span data-i18n="cert_ok">Certificat</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTES -->
+<section id="projectes" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">04</div>
+      <h2 class="section-title" data-i18n="proj_title">Projec<em>tes</em></h2>
+    </div>
+    <div class="projects-list">
+
+      <a href="https://nuviadev.github.io" target="_blank" rel="noopener" class="project-row reveal">
+        <div class="pr-index">01</div>
+        <div class="pr-main">
+          <h3 class="pr-name">Nuvia Dev</h3>
+          <p class="pr-desc" data-i18n="p1">Plataforma integral per a la gestió de projectes de desenvolupament. Web corporativa de l'empresa que he fundat.</p>
+          <div class="pr-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="pr-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+      <a href="https://omioga.github.io" target="_blank" rel="noopener" class="project-row reveal">
+        <div class="pr-index">02</div>
+        <div class="pr-main">
+          <h3 class="pr-name">OMIOGA</h3>
+          <p class="pr-desc" data-i18n="p2">Projecte personal de desenvolupament web. Explorant noves tecnologies, interfícies i dissenys per a la web moderna.</p>
+          <div class="pr-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>JSON</span><span>EMAILJS</span>
+          </div>
+        </div>
+        <div class="pr-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+      <a href="https://befenergy.github.io" target="_blank" rel="noopener" class="project-row reveal">
+        <div class="pr-index">03</div>
+        <div class="pr-main">
+          <h3 class="pr-name">BEF Energy — Suite Web</h3>
+          <p class="pr-desc" data-i18n="p3">Suite completa d'aplicacions web per a gestió energètica. Monitoratge en temps real, analítiques i informes automatitzats.</p>
+          <div class="pr-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>IA</span>
+          </div>
+        </div>
+        <div class="pr-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- HABILITATS -->
+<section id="habilitats" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">05</div>
+      <h2 class="section-title" data-i18n="skills_title">Habili<em>tats</em></h2>
+      <p class="section-sub reveal" data-i18n="skills_sub">Desenvolupador versàtil en formació. Combino sòlids fonaments tècnics amb curiositat constant per noves tecnologies.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="sg-label" data-i18n="sk1">Llenguatges</div>
+        <div class="sg-tags">
+          <span>C</span><span>Python</span><span>Java</span><span>JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-label" data-i18n="sk2">Web</div>
+        <div class="sg-tags">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript Avançat</span><span>React</span><span>Node.js</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-label" data-i18n="sk3">Bases de Dades</div>
+        <div class="sg-tags">
+          <span>SQL</span><span>BD Relacionals</span><span>APIs REST</span><span>Arquitectura SW</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-label" data-i18n="sk4">Ciberseguretat</div>
+        <div class="sg-tags">
+          <span>Ethical Hacking</span><span>Pentesting</span><span>Anàlisi Vulnerabilitats</span><span>Codi Segur</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-label" data-i18n="sk5">Sistemes</div>
+        <div class="sg-tags">
+          <span>Sistemes Operatius</span><span>Adm. de Xarxes</span><span>Infraestructura IT</span><span>Hardware</span>
+        </div>
+      </div>
+      <div class="skill-group skill-group-soft reveal">
+        <div class="sg-label" data-i18n="sk6">Soft Skills</div>
+        <div class="sg-tags">
+          <span data-i18n="sk6_1">Aprenentatge Continu</span>
+          <span data-i18n="sk6_2">Adaptabilitat</span>
+          <span data-i18n="sk6_3">Resolució de Problemes</span>
+          <span data-i18n="sk6_4">Treball en Equip</span>
+          <span data-i18n="sk6_5">Atenció al Detall</span>
+          <span data-i18n="sk6_6">Comunicació</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTE -->
+<section id="contacte" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-index">06</div>
+      <h2 class="section-title" data-i18n="contact_title">Contac<em>te</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <p data-i18n="contact_p1">Sempre obert a noves col·laboracions, projectes interessants o simplement una bona conversa sobre tecnologia i desenvolupament.</p>
+        <a href="mailto:pau.millan.viarnes@gmail.com" class="btn-primary btn-large">pau.millan.viarnes@gmail.com</a>
+      </div>
+      <div class="contact-links reveal">
+        <a href="https://github.com/paumillannn" target="_blank" rel="noopener" class="clink">
+          <div class="clink-label">GitHub</div>
+          <div class="clink-val">paumillannn</div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/pau-millan-viarnès-6786702b0/" target="_blank" rel="noopener" class="clink">
+          <div class="clink-label">LinkedIn</div>
+          <div class="clink-val">Pau Millan Viarnès</div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="https://nuviadev.github.io/index.html" target="_blank" rel="noopener" class="clink">
+          <div class="clink-label">Nuvia Dev</div>
+          <div class="clink-val">nuviadev.github.io</div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <div class="contact-info">
+          <div class="ci-row">
+            <span data-i18n="ub">Ubicació</span>
+            <strong>Igualada, Catalunya</strong>
+          </div>
+          <div class="ci-row">
+            <span data-i18n="dis">Disponibilitat</span>
+            <strong data-i18n="dis_v">Obert a nous projectes</strong>
+          </div>
+          <div class="ci-row">
+            <span data-i18n="lang_key">Idiomes</span>
+            <strong data-i18n="lang_v">Català · Castellà · Anglès</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-left">
+      <span>© <span id="yr"></span></span>
+      <span>Pau Millan Viarnès</span>
+      <span data-i18n="foot" class="foot-built">Dissenyat i construït per mi</span>
+    </div>
+    <div class="foot-right">PMV</div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="btt" aria-label="Tornar a dalt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
